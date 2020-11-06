@@ -1,0 +1,141 @@
+/*  é possivel declarar variaveis dentro do css */
+:root{
+    --vermelho: #e50914;
+    --preto: #141414;
+}
+@font-face {
+    font-family: 'Dharma Type';
+    src: url("../fonts/BebasNeue-Regular.ttf");
+    /* font-size: 40px; */
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* forçar que o tamanho da DIV seja o limite do conteudo interno */
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif /* poderia usar tambem do google fonts */
+    /* font-size: 14px; */
+}
+body {
+    background: var(--preto); /* Usando a variavel declarada em :root*/
+}
+
+/* CABEÇALHO */
+
+header .container {
+    display: flex; /* define como a caixa vai trabalhar a tag abaixo define o direcionamento */
+    flex-direction: row; /* row é o padrão de flex, mas pode ser alterado */
+    align-items: center; /* centraliza os itens verticalmente */
+    justify-content: space-between; /* cria um espaço entre as tags afastando-as pelas pontas "horizontalmente" */
+}
+body .logo {
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Dharma Type';
+    font-size: 60px;
+}
+header nav a {
+    color: #AAA;    
+    margin-right: 10px;
+}
+header nav a:hover {
+    color: #fff;
+}
+
+/* CORPO DO SITE */
+
+main .filme-principal {
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url("../img/capa01.jpg"); /* linear-gradient usando 2 rgba paa fazer tom sobre tom */
+    background-size: cover; /* faz com que a largura da imagem fique do tamanho da div */
+    height: 400px;
+    
+    font-size: 16px;;
+    color: white;
+
+
+    display: flex;
+    flex-direction: column; /* muda a direção do flex para coluna */
+    justify-content: center;
+    align-items: flex-start; /* alinha os componentes do lado esquerdo em diante*/
+}
+main .container {
+    width: 60%;
+    margin-left: 10px;;
+}
+.filme-principal .descricao {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.titulo {
+    margin-top: 15%;
+    font-size: 40px;
+}
+.botao {
+    background-color: rgba(0,0,0,.50);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    cursor: pointer;
+
+    transition: 3s ease all;
+}
+.botao:hover {
+    background-color: white;
+    color: black;
+    /* transition: 3s ease all; */
+}
+.botao i {
+    margin-right: 5px;
+}
+
+/* CARROUSEL DO SITE */
+
+.box-filmes {
+    margin: 10px 0 10px 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+
+
+/* @media (max-width: 768px) {
+    main .container {
+        width: 100%;
+        margin-left:0px;;
+        align-items: center;
+    }
+
+} */
+
+
+@media (max-width: 667px) {
+    header .container {
+        display: flex; /* define como a caixa vai trabalhar a tag abaixo define o direcionamento */
+        flex-direction: column; /* row é o padrão de flex, mas pode ser alterado */
+        align-items: center; /* centraliza os itens verticalmente */
+        justify-content: space-between; /* cria um espaço entre as tags afastando-as pelas pontas "horizontalmente" */
+        margin-bottom: 10px;
+    }    
+ 
+    main .filme-principal {
+        font-size: 14px;;
+        display: flex;
+        flex-direction: column; /* muda a direção do flex para coluna */
+        justify-content: center;
+        align-items: center; /* alinha os componentes do lado esquerdo em diante*/
+        text-align: center;
+    }
+     main .container {
+        width: 100%;
+        margin-left: 0px;     
+    }
+    .botao {
+        width: 170px;
+        margin-right: 0;
+        padding: 15px 0px;
+    }      
+    
+}
